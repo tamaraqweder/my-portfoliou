@@ -1,0 +1,784 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html {
+    scroll-behavior: smooth; 
+}
+section {
+    scroll-margin-top: 100px;    /* عشان لما اعمل سكرول ما يختفي الهيدر*/
+}
+
+:root{
+  
+
+    --p-1: 8px;
+    --p-2: 16px;
+    --p-3: 32px;
+
+    --m-1: 8px;
+    --m-2: 16px;
+    --m-3: 32px;
+
+    --gap-1: 10px;
+    --gap-2: 20px;
+    --gap-3: 40px;
+
+    --section-margin: 60px;
+    --content-margin: 40px;  
+
+    --project-width: 800px;
+    --form-width: 500px;
+}
+
+
+@keyframes rotateRing {
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+
+
+body{
+        background-color: rgb(255, 255, 255);
+        color: black;
+
+     font-family: "Segoe UI", arial, sans-serif;
+    
+     line-height: 1.6;
+}
+
+h2 {
+    text-align: center;
+    color: black;
+    font-size: 32px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    font-family: Georgia, serif;
+
+}
+
+
+.the-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+     position: sticky;
+    top: 0;
+
+    border-bottom: 1px solid gainsboro;
+
+        background-color: #f7f7f7;
+
+    
+   z-index: 5;
+
+
+}
+
+
+.logo img{
+    width: 100px;
+    margin: var(--m-1);
+    margin-left: var(--m-3); 
+
+}
+
+
+.nav-links ul{
+    margin: var(--m-3);
+    list-style: none;
+    display: flex;
+    gap: var(--gap-3);
+    font-size: larger;
+    
+       
+
+}
+.nav-links a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+      transition: 0.10s;
+      
+}
+
+.nav-links a:hover{
+    transform: scale(1.05);
+    
+    color:black;
+    border: 1px solid black;
+    padding: 0 10px;
+    background-color:white;
+
+
+   
+}
+.photo {
+    position: relative;
+    width: 320px;
+    height: 320px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.photo img {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    object-fit: cover;
+    position: relative;
+    z-index: 2;
+}
+
+.ring {
+    position: absolute;
+    width: 320px;
+    height: 320px;
+    border: 4px solid transparent;
+    border-top-color: black;
+    border-right-color: black;
+    border-radius: 50%;
+    animation: rotateRing 3s linear infinite;
+}
+
+
+.who-iam p{
+    font-size: large;
+
+}
+
+.who-iam{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--gap-1);
+
+
+}
+
+
+.about-me {
+    background-color: #f7f7f7;
+    padding: 60px 20px;
+    text-align: center;
+
+}
+
+
+
+.card1 {
+    background-color: white;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.card1 p {
+    line-height: 1.8;
+    margin-bottom: 30px;
+}
+
+.card1 span {
+    font-weight: bold;
+}
+
+.cv-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 8px;
+    transition: 0.3s;
+       
+
+}
+
+.cv-button:hover {
+    transform: scale(1.05);
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+
+
+
+.projects {
+    padding: 70px 20px;
+    text-align: center;
+    background-color: white;
+}
+
+
+
+.project1 {
+    background-color: #f7f7f7;
+    width: 800px;
+    margin: 0 auto 50px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+    transition: 0.3s;
+}
+
+.project1 img {
+    width: 100%;
+    height: 350px;
+    border-radius: 10px;
+}
+
+.project1 h5 {
+    font-size: 25px;
+    margin: 15px 0 10px;
+}
+
+.project1 p {
+    margin-bottom: 20px;
+}
+
+
+
+.another-project {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+}
+
+
+
+.project2,
+.project3 {
+    background-color: #f7f7f7;
+    width: 380px;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+    transition: 0.3s;
+}
+
+.project2 img,
+.project3 img {
+    width: 100%;
+    height: 210px;
+    border-radius: 10px;
+}
+
+.project2 h5,
+.project3 h5 {
+    font-size: 20px;
+    margin: 15px 0 10px;
+}
+
+.project2 p,
+.project3 p {
+    margin-bottom: 20px;
+}
+
+
+
+.project-button {
+    display: inline-block;
+    background-color: black;
+    color: white;
+    text-decoration: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+}
+
+.project-button:hover {
+    transform: scale(1.05);
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+
+.project1:hover {
+    transform: scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+}
+
+.project2:hover,
+.project3:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12);
+}
+
+
+
+
+
+
+
+.certification{
+
+    background-color: #f7f7f7;
+    text-align: center;
+}
+
+
+
+
+
+.certification-picture {
+    width: 50%;
+     margin: var(--m-3) auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+
+    gap: var(--gap-3);
+
+
+
+}
+
+.certification-picture img {
+    width: 100%;
+    margin: auto;
+             background-color: #f7f7f7;
+
+    transition: transform 0.2s, width 1s ;
+
+
+    
+}
+.certification-picture img:hover {
+    width: 110%;
+    transform: scale(1.2);
+
+
+}
+.img1 {
+    grid-column: 1 / 2;
+}
+
+.img2 {
+    grid-column: 2 / 3;
+}
+
+.img3 {
+    grid-column: 1/ 2;
+    grid-row: 2/3;
+}
+
+.img4 {
+    grid-column: 2/ 3;
+    grid-row: 2/3;
+}
+
+
+
+.Contacts {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    width: 90%;
+    margin: 60px auto;
+    
+}
+
+.contact-p1,
+.contact-p2 {
+   width: 450px;
+    height: 450px;
+    padding: 30px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+     background-color: #f7f7f7;
+    
+    transition: 0.5s;
+    
+}
+
+.contact-p1:hover ,
+.contact-p2:hover{
+    transform: scale(1.05);
+
+}
+
+
+
+
+
+.contact-1 div {
+    margin-bottom: 20px;
+}
+
+.contact-1 label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.contact-1 input,
+.contact-1 textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+}
+
+.button-message {
+    padding: 10px 20px;
+    background-color:black;
+    color: white;
+    
+    border-radius: 8px;
+    cursor: pointer;
+        transition: 0.3s;
+
+}
+
+.button-message:hover {
+      transform: scale(1.05);
+    color: black;
+    background-color: white;
+    border: 2px solid black;
+}
+
+
+
+.my-account div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 25px;
+    margin-top: 20px;
+}
+
+.my-account img {
+    width: 35px;
+    height: 35px;
+}
+
+.my-account a {
+    text-decoration: none;
+    color: #333;
+}
+
+.my-account p {
+    margin: 0;
+}
+
+
+
+
+
+
+
+@media (max-width: 600px) {
+
+   
+    .the-header {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    .logo img {
+        width: 80px;
+        margin: 5px;
+    }
+
+    .nav-links ul {
+        margin: 10px 0;
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+        font-size: 14px;
+    }
+
+    .who-iam {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 20px;
+    }
+
+    .photo {
+        width: 260px;
+        height: 260px;
+    }
+
+    .photo img {
+        width: 240px;
+        height: 240px;
+    }
+
+    .ring {
+        width: 260px;
+        height: 260px;
+    }
+
+    .who-iam p {
+        font-size: 15px;
+    }
+
+    .who-iam p br {
+        display: none;
+    }
+
+    .about-me {
+        padding: 50px 20px;
+    }
+
+    .card1 {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .projects {
+        padding: 50px 20px;
+    }
+
+    .project1 {
+        width: 100%;
+        padding: 15px;
+    }
+
+    .project1 img {
+        height: auto;
+    }
+
+    .another-project {
+        flex-direction: column;
+        align-items: center;
+        gap: 25px;
+    }
+
+    .project2,
+    .project3 {
+        width: 100%;
+        max-width: 380px;
+        padding: 15px;
+    }
+
+    .project2 img,
+    .project3 img {
+        height: auto;
+    }
+
+    .certification {
+        padding: 50px 20px;
+    }
+
+    .certification-picture {
+        width: 100%;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .img1,
+    .img2,
+    .img3,
+    .img4 {
+        grid-column: 1;
+        grid-row: auto;
+    }
+
+    .certification-picture img:hover {
+        width: 100%;
+        transform: scale(1.03);
+    }
+
+
+    .Contacts {
+        flex-direction: column;
+        width: 90%;
+        gap: 25px;
+        margin: 50px auto;
+    }
+
+    .contact-p1,
+    .contact-p2 {
+        width: 100%;
+        height: auto;
+        padding: 25px;
+    }
+
+    .contact-p1:hover,
+    .contact-p2:hover {
+        transform: none;
+    }
+
+}
+
+
+
+
+
+
+
+@media (min-width: 601px) and (max-width: 900px) {
+
+    .logo img {
+        width: 80px;
+        margin-left: 20px;
+    }
+
+    .nav-links ul {
+        margin: 20px;
+        gap: 20px;
+        font-size: 15px;
+    }
+
+    .who-iam {
+        padding: 40px 20px;
+        gap: 20px;
+    }
+
+    .photo {
+        width: 250px;
+        height: 250px;
+    }
+
+    .photo img {
+        width: 230px;
+        height: 230px;
+    }
+
+    .ring {
+        width: 250px;
+        height: 250px;
+    }
+
+    .who-iam p {
+        font-size: 16px;
+    }
+
+    .card1 {
+        width: 90%;
+        max-width: 700px;
+    }
+
+    .project1 {
+        width: 90%;
+        max-width: 700px;
+    }
+
+    .project1 img {
+        height: auto;
+    }
+
+    .another-project {
+        gap: 20px;
+        padding: 0 20px;
+    }
+
+    .project2,
+    .project3 {
+        width: 50%;
+    }
+
+    .project2 img,
+    .project3 img {
+        height: auto;
+    }
+
+    .certification-picture {
+        width: 80%;
+        gap: 25px;
+    }
+
+    .Contacts {
+        width: 90%;
+        gap: 20px;
+    }
+
+    .contact-p1,
+    .contact-p2 {
+        width: 50%;
+        height: auto;
+        min-height: 450px;
+    }
+
+}
+
+
+
+
+
+
+/* Dark Mode Button */
+
+.dark-mode input {
+    display: none;
+}
+
+.dark-mode label {
+    cursor: pointer;
+    font-size: 22px;
+    margin-right: 20px;
+}
+
+
+/* Dark Mode */
+
+body:has(#dark-mode:checked) {
+    background-color: #121212;
+    color: white;
+}
+
+body:has(#dark-mode:checked) .the-header {
+    background-color: #121212;
+    border-color: #333;
+}
+
+body:has(#dark-mode:checked) .nav-links a {
+    color: white;
+}
+
+body:has(#dark-mode:checked) .about-me {
+    background-color: #1e1e1e;
+}
+
+body:has(#dark-mode:checked) .card1 {
+    background-color: #222;
+    color: white;
+}
+
+body:has(#dark-mode:checked) .projects {
+    background-color: #121212;
+}
+
+body:has(#dark-mode:checked) .project1,
+body:has(#dark-mode:checked) .project2,
+body:has(#dark-mode:checked) .project3 {
+    background-color: #222;
+    color: white;
+}
+
+body:has(#dark-mode:checked) .certification {
+    background-color: #121212;
+}
+
+body:has(#dark-mode:checked) .contact-p1,
+body:has(#dark-mode:checked) .contact-p2 {
+    background-color: #222;
+    color: white;
+}
+
+body:has(#dark-mode:checked) footer {
+    background-color: #121212;
+}
+
+body:has(#dark-mode:checked) .my-account a {
+    color: white;
+}
+body:has(#dark-mode:checked) h2 {
+    color: white;
+}
